@@ -53,3 +53,18 @@ print(df.iloc[2])
 print(df.loc[['X', 'Z']])
 #  get value in a spacific col with spacific row
 print(df.loc[['X', 'Z'], ['C1', 'C3']])
+
+# to drop a column and row
+df.drop('C4', axis=1)
+print(df)
+
+
+
+
+
+
+
+
+
+
+
