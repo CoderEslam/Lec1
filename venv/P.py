@@ -55,11 +55,50 @@ print(df.loc[['X', 'Z']])
 print(df.loc[['X', 'Z'], ['C1', 'C3']])
 
 # to drop a column and row
-df.drop('C4', axis=1)
+print(df.drop('C4', axis=1))
+# but it doen't delete original data
 print(df)
 
+# if i want to realy dalet it use inplace=True
+df.drop('C4', axis=1, inplace=True)
+print(df)
+df = pd.DataFrame(randn(5, 3), index=['A', 'B', 'C', 'D', 'E'], columns=['C1', 'C2', 'C3'])
+print(df)
+print("print filter all columns by true or false")
+print(df <= 0)
 
+print("print filter all columns by NaN")
 
+df2 = df[df <= 0]
+
+print(df2)
+
+print("print filter one  column")
+
+df2 = df[df['C2'] <= 0]
+print(df2)
+
+print("print filter tow  columns")
+df2 = df[(df['C2'] <= 0) | (df['C1'] >= .5)]
+print(df2)
+
+df = pd.DataFrame([[15, 25, 66],
+                   [np.nan, 88, 102],
+                   [np.nan, 99, np.nan]
+                   ],
+                  index=['A', 'B', 'C'],
+                  columns=['C1', 'C2', 'C3'])
+print(df)
+
+# to drop missing value
+df.dropna()
+print(df.dropna())
+
+# to remove column
+print(df.dropna(axis=1))
+
+# to remove data if they omre than 2 or equal 2
+print(df.dropna(axis=1, thresh=2))
 
 
 
