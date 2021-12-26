@@ -101,7 +101,11 @@ print(df.dropna(axis=1))
 print(df.dropna(axis=1, thresh=2))
 
 
+#  to fill data if it's missing
+df.fillna(500)
+print(df.fillna(500))
 
+print (df.fillna(df['C2'].mean()))
 
 
 
